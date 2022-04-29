@@ -1,0 +1,43 @@
+CREATE TABLE Admin_tbl (
+    AdminID int AUTO_INCREMENT PRIMARY Key,
+    AdminName varchar(100) Not Null,
+    AdminEmail varchar(100) Not Null,
+    AdminPassword varchar(100) Not Null,
+    AdminImage BLOB Not Null,
+    AdminContact varchar(100) Not Null
+)
+
+CREATE TABLE Patient_tbl (
+    PatientID int AUTO_INCREMENT PRIMARY Key,
+    PatientName varchar(100) Not Null,
+    PatientEmail varchar(100) Not Null,
+    PatientPassword varchar(100) Not Null,
+    PatientImage BLOB Not Null,
+    PatientContact varchar(100) Not Null
+)
+
+
+CREATE TABLE City_tbl (
+    CityID int AUTO_INCREMENT PRIMARY Key,
+    CityName varchar(100) Not Null
+)
+
+
+CREATE TABLE Speciality_tbl (
+    SpecialityID int AUTO_INCREMENT PRIMARY Key,
+    SpecialityName varchar(100) Not Null,
+    SpecialityImage BLOB Not Null
+)
+
+
+CREATE TABLE Doctor_tbl (
+    DoctorID int AUTO_INCREMENT PRIMARY Key,
+    DoctorName varchar(100) Not Null,
+    DoctorEmail varchar(100) Not Null,
+    DoctorPassword varchar(100) Not Null,
+    DoctorImage BLOB Not Null,
+    DoctorDate BLOB Not Null,
+    DoctorSpeciality int NOT null,
+    DoctorContact varchar(100) Not Null,
+    CONSTRAINT fk_speciality FOREIGN KEY (Person_Id) REFERENCES Persons(ID)  
+)
